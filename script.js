@@ -16,6 +16,9 @@ class Kardio extends Aktivita {
     kalorie() {
         return this.km * 60;
     }
+    zobraz() {
+        return `${this.nazev} (${this.cas} min, ${this.km} km) - ${this.kalorie()} kcal`;
+    }
 }
 class Silovy extends Aktivita {
     vaha;
@@ -26,4 +29,9 @@ class Silovy extends Aktivita {
     kalorie() {
         return this.vaha * 0.5;
     }
+    zobraz() {
+        return `${this.nazev} (${this.cas} min, ${this.vaha} kg) - ${this.kalorie()} kcal`;
+    }
 }
+window.Kardio = Kardio;
+window.Silovy = Silovy;

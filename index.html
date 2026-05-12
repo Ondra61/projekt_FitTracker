@@ -6,7 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+   <h1>FitTracker Pro</h1>
+
+  <h3>Přidat aktivitu</h3>
+
+  <select id="typ">
+    <option value="kardio">Kardio</option>
+    <option value="silovy">Silový</option>
+  </select>
+
+  <input id="nazev" placeholder="Název">
+  <input id="cas" type="number" placeholder="Čas (min)">
+  <input id="extra" type="number" placeholder="km / váha">
+
+  <button onclick="pridat()">Přidat</button>
+
+  <h3>Výstup</h3>
+  <div id="output"></div>
+
+  <script src="script.js"></script>
+  <script src="data.js"></script>
 </body>
 </html>
