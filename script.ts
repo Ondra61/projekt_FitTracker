@@ -71,3 +71,57 @@ class Silovy extends Aktivita {
         return `${this.nazev} (${this.cas} min, ${this.vaha} kg) - ${this.kalorie()} kcal`;
     }
 }
+window.onload = () => {
+
+    const aktivity: Aktivita[] = [];
+
+    for (const item of data) {
+
+        if (item.typ === "kardio") {
+
+            aktivity.push(
+                new Kardio(
+                    item.nazev,
+                    item.cas,
+                    item.km
+                )
+            );
+        }
+
+        else if (item.typ === "silovy") {
+
+            aktivity.push(
+                new Silovy(
+                    item.nazev,
+                    item.cas,
+                    item.vaha
+                )
+            );
+        }
+    }
+
+    const output = document.getElementById("output")!;
+
+    let celkemKalorii = 0;
+
+    for (const a of aktivity) {
+
+        console.log(a.zobraz());
+
+        const p = document.createElement("p");
+
+        p.textContent = a.zobraz();
+
+        output.appendChild(p);
+
+        celkemKalorii += a.kalorie();
+    }
+
+    const total = document.createElement("h2");
+
+    total.textContent = `Celkem spáleno: ${celkemKalorii} kcal`;
+
+    output.appendChild(total);
+
+    console.log(`Celkem spáleno: ${celkemKalorii} kcal`);
+};
