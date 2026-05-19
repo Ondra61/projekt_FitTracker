@@ -1,15 +1,22 @@
-window.onload = () => {
-  const testData = [
-    new (window as any).Kardio("Beh", 30, 5),
-    new (window as any).Kardio("Kolo", 60, 20),
-    new (window as any).Silovy("Drepy", 40, 80)
-  ];
+const data = [
+    {
+        typ: "kardio",
+        nazev: "Beh",
+        cas: 30,
+        km: 5
+    },
 
-  const output = document.getElementById("output")!;
+    {
+        typ: "kardio",
+        nazev: "Kolo",
+        cas: 60,
+        km: 20
+    },
 
-  for (const a of testData) {
-    const p = document.createElement("p");
-    p.textContent = `TEST: ${a.zobraz()}`;
-    output.appendChild(p);
-  }
-};
+    {
+        typ: "silovy",
+        nazev: "Drepy",
+        cas: 40,
+        vaha: 80
+    }
+];

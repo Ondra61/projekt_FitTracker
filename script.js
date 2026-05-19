@@ -3,40 +3,23 @@ class Aktivita {
     nazev;
     cas;
     constructor(nazev, cas) {
+        if (nazev.trim() === "") {
+            throw new Error("Nazev nesmi byt prazdny");
+        }
+        if (cas <= 0) {
+            throw new Error("Cas musi byt kladne cislo");
+        }
         this.nazev = nazev;
         this.cas = cas;
     }
-<<<<<<< HEAD
-    info() {
-        return `${this.nazev} - ${this.cas} min`;
-    }
-}
-class Kardio extends Aktivita {
-    d;
-    constructor(n, c, d) {
-        super(n, c);
-        this.d = d;
-    }
-    kcal() {
-        return this.d * 50;
-    }
-}
-class Silovy extends Aktivita {
-    v;
-    constructor(n, c, v) {
-        super(n, c);
-        this.v = v;
-    }
-    kcal() {
-        return this.v * 0.5;
-    }
-}
-=======
 }
 class Kardio extends Aktivita {
     km;
     constructor(nazev, cas, km) {
         super(nazev, cas);
+        if (km <= 0) {
+            throw new Error("Kilometry musi byt kladne cislo");
+        }
         this.km = km;
     }
     kalorie() {
@@ -50,6 +33,9 @@ class Silovy extends Aktivita {
     vaha;
     constructor(nazev, cas, vaha) {
         super(nazev, cas);
+        if (vaha <= 0) {
+            throw new Error("Vaha musi byt kladne cislo");
+        }
         this.vaha = vaha;
     }
     kalorie() {
@@ -59,6 +45,3 @@ class Silovy extends Aktivita {
         return `${this.nazev} (${this.cas} min, ${this.vaha} kg) - ${this.kalorie()} kcal`;
     }
 }
-window.Kardio = Kardio;
-window.Silovy = Silovy;
->>>>>>> 014537fc98db26c3241698542902958bc404c88c

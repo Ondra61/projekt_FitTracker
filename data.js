@@ -1,17 +1,21 @@
 "use strict";
-<<<<<<< HEAD
-=======
-window.onload = () => {
-    const testData = [
-        new window.Kardio("Beh", 30, 5),
-        new window.Kardio("Kolo", 60, 20),
-        new window.Silovy("Drepy", 40, 80)
-    ];
-    const output = document.getElementById("output");
-    for (const a of testData) {
-        const p = document.createElement("p");
-        p.textContent = `TEST: ${a.zobraz()}`;
-        output.appendChild(p);
+const data = [
+    {
+        typ: "kardio",
+        nazev: "Beh",
+        cas: 30,
+        km: 5
+    },
+    {
+        typ: "kardio",
+        nazev: "Kolo",
+        cas: 60,
+        km: 20
+    },
+    {
+        typ: "silovy",
+        nazev: "Drepy",
+        cas: 40,
+        vaha: 80
     }
-};
->>>>>>> 014537fc98db26c3241698542902958bc404c88c
+];
