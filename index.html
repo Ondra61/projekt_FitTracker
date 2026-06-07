@@ -1,16 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fitness Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <h1>Seznam aktivit</h1>
 
-    <div id="output"></div>
-    
-    <script src="./data.js"></script>
-    <script src="./script.js"></script>
+    <div class="hlavni-kontejner">
+        <div class="panel">
+            <div class="nastaveni-dne">
+                <label for="denSelect">📅 Den pro trénink: </label>
+                <select id="denSelect"></select>
+            </div>
+            <h2>Katalog aktivit</h2>
+            <div id="katalog" class="katalog-vypis"></div>
+        </div>
+
+        <div id="tydenniSouhrnBlok" class="panel souhrn-panel"></div>
+
+        <h2>Týdenní přehled</h2>
+        <div id="dnyKontejner" class="tyden-grid"></div>
+    </div>
+
+    <div id="modal" class="modal-pozadi" style="display: none;">
+        <div class="modal-obsah">
+            <h3 id="modalNazev">Upravit aktivitu</h3>
+            <form id="modalForm">
+                <div class="form-group">
+                    <label for="modalCas">Čas (minuty):</label>
+                    <input type="number" id="modalCas" required>
+                </div>
+                
+                <div id="modalKardioInputy" class="form-group">
+                    <label for="modalKm">Vzdálenost (km):</label>
+                    <input type="number" id="modalKm">
+                </div>
+
+                <div id="modalSilovyInputy" class="form-group">
+                    <label for="modalVaha">Váha (kg):</label>
+                    <input type="number" id="modalVaha">
+                </div>
+
+                <div class="modal-tlacitka">
+                    <button type="submit" class="btn-ulozit">Uložit aktivitu</button>
+                    <button type="button" id="btnZrusit" class="btn-zrusit">Zrušit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>
