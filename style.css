@@ -85,3 +85,22 @@ h3, h4 { margin: 0; font-weight: 600; }
 .btn-ulozit, .btn-zrusit { padding: 10px; border: none; border-radius: 6px; flex: 1; cursor: pointer; font-weight: 600; font-size: 14px; }
 .btn-ulozit { background: #2563eb; color: white; }
 .btn-zrusit { background: #e2e8f0; color: var(--text-color); }
+@media (max-width: 600px) {
+    .souhrn-obsah { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 20px;
+    }
+    .souhrn-statistiky { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; 
+    }
+    .modal-obsah { 
+        width: 90%; 
+        padding: 15px;
+    }
+    .tyden-grid {
+        grid-template-columns: 1fr; /* Na mobilu dny pod sebou */
+    }
+}
